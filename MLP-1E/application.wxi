@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+	<Fragment>
+
+		<ComponentGroup Id="ProductComponents" Directory="APPLICATIONFOLDER">
+			<ComponentRef	Id="application.exe" Primary="yes"/>
+		</ComponentGroup>
+
+		<DirectoryRef Id="APPLICATIONFOLDER" FileSource=".\SourceDir\Prg">
+			<Component
+				Id="application.exe"
+				Guid="{9E1407DA-899E-4BA1-A44D-23AE121C8FE7}"
+				Location="either"
+				Win64="no"
+			>
+				<File
+					Id="application"
+					Name="mlp_1e.exe"
+					KeyPath="yes"
+					Vital="yes"
+					Checksum="yes"
+				>
+					<Shortcut
+						Id="application.Shortcut"
+						Directory="PRODUCTMENUFOLDER"
+						Name="$(var.ProductShortName)"
+						Description="$(var.ProductName)"
+						WorkingDirectory="APPLICATIONFOLDER"
+						Show="normal"
+						Advertise="yes"
+					>
+						<Icon Id="application.exe" SourceFile=".\Icons\Product.ico"/>
+					</Shortcut>
+					<Shortcut
+						Id="application.DesktopShortcut"
+						Directory="PRODUCTDESKTOPFOLDER"
+						Name="$(var.ProductShortName)"
+						Description="$(var.ProductName)"
+						WorkingDirectory="APPLICATIONFOLDER"
+						Show="normal"
+						Icon="application.exe"
+						Advertise="yes"
+					/>
+					<Shortcut
+						Id="application.StartupShortcut"
+						Directory="PRODUCTSTARTUPFOLDER"
+						Name="$(var.ProductShortName)"
+						Description="$(var.ProductName)"
+						WorkingDirectory="APPLICATIONFOLDER"
+						Show="normal"
+						Icon="application.exe"
+						Advertise="yes"
+					/>
+				</File>
+				<RemoveFolder Id="application.ProductMenuFolder" Directory="PRODUCTMENUFOLDER" On="uninstall"/>
+				<RemoveFolder Id="application.ProductDesktopFolder" Directory="PRODUCTDESKTOPFOLDER" On="uninstall"/>
+				<RemoveFolder Id="application.ProductStartupFolder" Directory="PRODUCTSTARTUPFOLDER" On="uninstall"/>
+			</Component>
+		</DirectoryRef>
+
+	</Fragment>
+</Include>
