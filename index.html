@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Itg.mlp-1e by IT-Service</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Itg.mlp-1e</h1>
+        <p>.msi пакет для распространения в рамках домена программного продукта для модели лёгких пневматической электрической МЛП-1Э</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/IT-Service/ITG.MLP-1E" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/IT-Service/ITG.MLP-1E/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/IT-Service/ITG.MLP-1E/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>
+<a name="-----1---msi-" class="anchor" href="#-----1---msi-"><span class="octicon octicon-link"></span></a>Модель лёгких пневматическая электронная МЛП-1Э - .msi пакет</h1>
+
+<p>Данный проект - .msi пакет для развёртывания в рамках домена программного продукта для управления
+моделью лёгких пневматической электронной МЛП-1Э.</p>
+
+<p>В состав пакета включены так же и драйверы для подключения модели к компьютеру.</p>
+
+<h2>
+<a name="---msi-" class="anchor" href="#---msi-"><span class="octicon octicon-link"></span></a>Инструменты для сборки .msi пакета</h2>
+
+<p>Для внесения изменений в пакет и повторной сборки пакета потребуются следующие продукты:</p>
+
+<ul>
+<li>Microsoft Visual Studio 2012 Shell:
+
+<ul>
+<li><a href="http://www.microsoft.com/ru-ru/download/details.aspx?id=30670">Isolated</a></li>
+<li><a href="http://www.microsoft.com/ru-ru/download/details.aspx?id=30663">Integrated</a></li>
+</ul>
+</li>
+<li><a href="http://wixtoolset.org/">Windows Installer XML Toolset - WIX</a></li>
+</ul><p>Установить необходимо все пакеты в указанном порядке. В результате - получае MS Visual Studio 2012 с подготовленными
+шаблонами проектов WiX. После этого открываем файл решения <code>MLP-1E.sln</code> и собираем решение.</p>
+
+<h2>
+<a name="-" class="anchor" href="#-"><span class="octicon octicon-link"></span></a>Варианты пакетов</h2>
+
+<h3>
+<a name="--" class="anchor" href="#--"><span class="octicon octicon-link"></span></a>Административная точка установки</h3>
+
+<p>В папке <code>bin\Admin image\x86\ru-RU</code> собран проект, подготовленный к роли административной точки установки.
+В нём отсутствует интерфейс пользователя.</p>
+
+<h3>
+<a name="msi-----" class="anchor" href="#msi-----"><span class="octicon octicon-link"></span></a>.msi пакет в виде единого файла</h3>
+
+<p>В папке <code>bin\Single .msi file\x86\ru-RU</code> собран .msi пакет в виде единого файла.
+В отличии от предыдущего варианта, в данной редакции присутствует интерфейс пользователя,
+позволяющий изменить и состав продукта, и папку его установки.</p>
+
+<p>При необходимости создания административной точки установки с интерфейсом пользователя следует воспользоваться
+командной строкой по следующему примеру:</p>
+
+<pre><code>msiexec -a "bin\Single .msi file\x86\ru-RU\mlp-1e.msi" TARGETDIR="adm\x86"
+</code></pre>
+
+<h2>
+<a name="---" class="anchor" href="#---"><span class="octicon octicon-link"></span></a>Подготовка административной точки установки</h2>
+
+<p>При подготовке административной точки установки доступны к изменении нижеописанные свойства.</p>
+
+<h3>
+<a name="allusers" class="anchor" href="#allusers"><span class="octicon octicon-link"></span></a>ALLUSERS</h3>
+
+<p>По умолчанию - <code>"1"</code>. При установке <code>"0"</code> регистрация будет осуществлена в реестре пользователя, а не в реестре компьютера.</p>
+
+<h3>
+<a name="disableshortcuts" class="anchor" href="#disableshortcuts"><span class="octicon octicon-link"></span></a>DISABLESHORTCUTS</h3>
+
+<p>По умолчанию - <code>"No"</code>. При установке значения <code>"Yes"</code> при установке не будут опубликованы ярлыки.
+Данным свойством следует воспользоваться, если Вы планируете запускать приложения АИС Метроконтроль через ярлыки на
+<code>.csmdb23</code> файлы (о данных дополнительных возможностях пакета читайте далее).</p>
+
+<h3>
+<a name="disabledesktopshortcuts" class="anchor" href="#disabledesktopshortcuts"><span class="octicon octicon-link"></span></a>DISABLEDESKTOPSHORTCUTS</h3>
+
+<p>По умолчанию - <code>"No"</code>. При установке значения <code>"Yes"</code> при установке не будут опубликованы ярлыки на рабочем столе.
+При <code>DISABLESHORTCUTS="Yes"</code> значение данного свойства роли не играет.</p>
+
+<h3>
+<a name="disablemenushortcuts" class="anchor" href="#disablemenushortcuts"><span class="octicon octicon-link"></span></a>DISABLEMENUSHORTCUTS</h3>
+
+<p>По умолчанию - <code>"No"</code>. При установке значения <code>"Yes"</code> при установке не будут опубликованы ярлыки в меню.
+При <code>DISABLESHORTCUTS="Yes"</code> значение данного свойства роли не играет.</p>
+
+<h3>
+<a name="disablestartupshortcuts" class="anchor" href="#disablestartupshortcuts"><span class="octicon octicon-link"></span></a>DISABLESTARTUPSHORTCUTS</h3>
+
+<p>По умолчанию - <code>"Yes"</code>. При установке значения <code>"Yes"</code> при установке не будут опубликованы ярлык на АИС Метроконтроль
+в меню автозагрузки. При <code>DISABLESHORTCUTS="Yes"</code> значение данного свойства роли не играет.</p>
+
+<h3>
+<a name="applicationfolder" class="anchor" href="#applicationfolder"><span class="octicon octicon-link"></span></a>APPLICATIONFOLDER</h3>
+
+<p>Путь к папке, в которую будет установлен программный продукт. По умолчанию - <code>%ProgramFiles(x86)%\РЦН\Метроконтроль\2.3%</code>.
+Устанавливать в качестве значения данного свойства требуется только путь по отношению к <code>%ProgramFiles%</code>.</p>
+
+<h3>
+<a name="installlevel" class="anchor" href="#installlevel"><span class="octicon octicon-link"></span></a>INSTALLLEVEL</h3>
+
+<p>По умолчанию - <code>"100"</code>. По умолчнию будут установлены только приложения "АИС Метроконтроль" и "Учёт клейм".
+При установке <code>INSTALLLEVEL</code> больше 200 будет установлено и приложение "Метроконтроль - администратор".</p>
+
+<h3>
+<a name="" class="anchor" href="#"><span class="octicon octicon-link"></span></a>Примеры</h3>
+
+<p>Несколько примеров подготовки административной точки установки:</p>
+
+<pre><code>msiexec -a mlp-1e.msi DISABLEDESKTOPSHORTCUTS=Yes ALLUSERS=0
+</code></pre>
+
+<p>Данная командная строка готовит точку установки с "отключенными" ярлыками рабочего стола, с установкой приложения для пользователя
+(а не для компьютера).</p>
+
+<pre><code>msiexec -a mlp-1e.msi DISABLESHORTCUTS=Yes
+</code></pre>
+
+<p>Данная командная строка готовит точку установки с "отключенными" ярлыками.</p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/IT-Service">IT-Service</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
