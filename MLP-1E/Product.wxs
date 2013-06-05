@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<Wix
+	xmlns="http://schemas.microsoft.com/wix/2006/wi"
+>
 
 	<?define ProductVersion="04.40.0001.0100"?>
 	<?define ProductMajorVersion="4"?>
@@ -90,6 +92,7 @@
 			Description="$(var.ProductName)"
 		>
 			<ComponentGroupRef Id="ProductComponents" />
+			<ComponentGroupRef Id="DriversComponents" />
 		</Feature>
 
 		<Property Id="ARPREADME" Value="https://github.com/IT-Service/ITG.$(var.ProductInternalName)/blob/master/readme.md"/>
@@ -247,6 +250,8 @@
 	</Product>
 
 	<?include application.wxi ?>
+	<?include drivers.wxi ?>
+	
 	<?include WixUI_MondoWithoutLicenseDlg.wxi?>
 
 </Wix>

@@ -10,12 +10,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Admin image|x64 = Admin image|x64
 		Admin image|x86 = Admin image|x86
+		Single .msi file|x64 = Single .msi file|x64
 		Single .msi file|x86 = Single .msi file|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00CB7F8E-8726-4E55-91B7-EB05D0A4A5D3}.Admin image|x64.ActiveCfg = Admin image|x64
+		{00CB7F8E-8726-4E55-91B7-EB05D0A4A5D3}.Admin image|x64.Build.0 = Admin image|x64
 		{00CB7F8E-8726-4E55-91B7-EB05D0A4A5D3}.Admin image|x86.ActiveCfg = Admin image|x86
 		{00CB7F8E-8726-4E55-91B7-EB05D0A4A5D3}.Admin image|x86.Build.0 = Admin image|x86
+		{00CB7F8E-8726-4E55-91B7-EB05D0A4A5D3}.Single .msi file|x64.ActiveCfg = Single .msi file|x64
 		{00CB7F8E-8726-4E55-91B7-EB05D0A4A5D3}.Single .msi file|x86.ActiveCfg = Single .msi file|x86
 		{00CB7F8E-8726-4E55-91B7-EB05D0A4A5D3}.Single .msi file|x86.Build.0 = Single .msi file|x86
 	EndGlobalSection

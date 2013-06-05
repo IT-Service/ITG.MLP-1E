@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include
+	xmlns="http://schemas.microsoft.com/wix/2006/wi"
+	xmlns:difx='http://schemas.microsoft.com/wix/DifxAppExtension'
+>
+	<Fragment>
+
+		<ComponentGroup Id="DriversComponents">
+			<ComponentRef Id="slabbus.inf"/>
+			<ComponentRef Id="slabbus.cat"/>
+			<ComponentRef Id="slabbus.sys"/>
+			<ComponentRef Id="slabwhnt.sys"/>
+
+			<ComponentRef Id="slabw2k.inf"/>
+			<ComponentRef Id="slabser.cat"/>
+			<ComponentRef Id="slabser.sys"/>
+			<ComponentRef Id="slabcmnt.sys"/>
+		</ComponentGroup>
+
+		<DirectoryRef Id="TempFolder">
+			<Directory
+				Id="Drivers"
+				Name="Drivers"
+			>
+				<Directory
+					Id="SlabBus"
+					Name="SlabBus"
+					FileSource=".\SourceDir\Drv"
+					ComponentGuidGenerationSeed="{1CAC7B73-2B67-44e5-971C-DD34DD39DB43}"
+				>
+
+					<Component
+						Id="slabbus.inf"
+						Location="either"
+						Win64="$(var.Win64)"
+					>
+						<File
+							Name="slabbus.inf"
+							KeyPath="yes"
+							Vital="yes"
+							Checksum="yes"
+						/>
+					</Component>
+					<Component
+						Id="slabbus.cat"
+						Location="either"
+						Win64="$(var.Win64)"
+					>
+						<File
+							Name="slabbus.cat"
+							KeyPath="yes"
+							Vital="yes"
+							Checksum="yes"
+						/>
+					</Component>
+
+					<Directory
+						Id="SlabBusSys"
+						Name="$(sys.BUILDARCH)"
+					>
+						<Component
+							Id="slabbus.sys"
+							Location="either"
+							Win64="$(var.Win64)"
+						>
+							<File
+								Name="slabbus.sys"
+								KeyPath="yes"
+								Vital="yes"
+								Checksum="yes"
+							/>
+						</Component>
+						<Component
+							Id="slabwhnt.sys"
+							Location="either"
+							Win64="$(var.Win64)"
+						>
+							<File
+								Name="slabwhnt.sys"
+								KeyPath="yes"
+								Vital="yes"
+								Checksum="yes"
+							/>
+						</Component>
+					</Directory>
+				</Directory>
+
+				<Directory
+					Id="SlabSer"
+					Name="SlabSer"
+					FileSource=".\SourceDir\Drv"
+					ComponentGuidGenerationSeed="{5E270213-9EC6-404D-96F4-2CDE77E403A5}"
+				>
+
+					<Component
+						Id="slabw2k.inf"
+						Location="either"
+						Win64="$(var.Win64)"
+					>
+						<File
+							Name="slabw2k.inf"
+							KeyPath="yes"
+							Vital="yes"
+							Checksum="yes"
+						/>
+					</Component>
+					<Component
+						Id="slabser.cat"
+						Location="either"
+						Win64="$(var.Win64)"
+					>
+						<File
+							Name="slabser.cat"
+							KeyPath="yes"
+							Vital="yes"
+							Checksum="yes"
+						/>
+					</Component>
+
+					<Directory
+						Id="SlabSerSys"
+						Name="$(sys.BUILDARCH)"
+					>
+						<Component
+							Id="slabser.sys"
+							Location="either"
+							Win64="$(var.Win64)"
+						>
+							<File
+								Name="slabser.sys"
+								KeyPath="yes"
+								Vital="yes"
+								Checksum="yes"
+							/>
+						</Component>
+						<Component
+							Id="slabcmnt.sys"
+							Location="either"
+							Win64="$(var.Win64)"
+						>
+							<File
+								Name="slabcmnt.sys"
+								KeyPath="yes"
+								Vital="yes"
+								Checksum="yes"
+							/>
+						</Component>
+					</Directory>
+				</Directory>
+			</Directory>
+		</DirectoryRef>
+
+	</Fragment>
+</Include>
