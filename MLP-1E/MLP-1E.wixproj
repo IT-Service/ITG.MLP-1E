@@ -15,15 +15,15 @@
     <SuppressPdbOutput>True</SuppressPdbOutput>
     <OutputPath>..\bin\$(Configuration)\$(Platform)\</OutputPath>
     <IntermediateOutputPath>obj\$(Configuration)\$(Platform)\</IntermediateOutputPath>
-		<SuppressIces>ICE90</SuppressIces>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)' == 'Admin image' ">
-		<DefineConstants>AdminImage</DefineConstants>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)' == 'Single .msi file' ">
-		<DefineConstants>SingleMSIFile</DefineConstants>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Admin image|x86' ">
+    <SuppressIces>ICE90</SuppressIces>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Admin image' ">
+    <DefineConstants>AdminImage</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Single .msi file' ">
+    <DefineConstants>SingleMSIFile</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Admin image|x86' ">
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Single .msi file|x86' ">
   </PropertyGroup>
@@ -68,15 +68,19 @@
     <EmbeddedResource Include="Common.1049.wxl" />
   </ItemGroup>
   <ItemGroup>
+    <WixExtension Include="WixDifxAppExtension">
+      <HintPath>$(WixExtDir)\WixDifxAppExtension.dll</HintPath>
+      <Name>WixDifxAppExtension</Name>
+    </WixExtension>
     <WixExtension Include="WixUIExtension">
       <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
       <Name>WixUIExtension</Name>
     </WixExtension>
   </ItemGroup>
   <ItemGroup>
-    <WixLibrary Include="difxapp_$(Platform)">
-      <HintPath>C:\Program Files (x86)\WiX Toolset v4.0\bin\difxapp_$(Platform).wixlib</HintPath>
-      <Name>difxapp_$(Platform)</Name>
+    <WixLibrary Include="difxapp">
+      <HintPath>$(WixExtDir)\difxapp_$(Platform).wixlib</HintPath>
+      <Name>difxapp</Name>
     </WixLibrary>
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />

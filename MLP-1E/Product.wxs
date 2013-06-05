@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix
 	xmlns="http://schemas.microsoft.com/wix/2006/wi"
+	xmlns:difx='http://schemas.microsoft.com/wix/DifxAppExtension'
 >
 
 	<?define ProductVersion="04.40.0001.0100"?>
@@ -58,7 +59,7 @@
 		UpgradeCode="$(var.UpgradeCode)"
 	>
 		<Package
-			InstallerVersion="200"
+			InstallerVersion="400"
 			InstallScope="perMachine"
 			InstallPrivileges="elevated"
 			AdminImage="$(var.IsAdminImage)"
