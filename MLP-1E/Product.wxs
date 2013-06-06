@@ -51,7 +51,7 @@
 
 	<Product
 		Id="$(var.ProductCode)"
-		Name="$(var.ProductName)"
+		Name="$(var.Manufacturer) $(var.ProductName)"
 		Version="$(var.ProductVersion)"
 		Language="1049"
 		Codepage="1251"
