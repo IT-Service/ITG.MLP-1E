@@ -13,7 +13,7 @@
     <Name>Metrcontrol</Name>
     <Cultures>ru-RU</Cultures>
     <SuppressPdbOutput>True</SuppressPdbOutput>
-    <OutputPath>..\bin\$(Configuration)\$(Platform)\</OutputPath>
+    <OutputPath>$(SolutionDir)bin\$(Configuration)\$(Platform)\</OutputPath>
     <IntermediateOutputPath>obj\$(Configuration)\$(Platform)\</IntermediateOutputPath>
     <SuppressIces>ICE90</SuppressIces>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
@@ -88,6 +88,7 @@
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <PropertyGroup>
-    <PostBuildEvent />
+    <PostBuildEvent>"%25VS110COMNTOOLS%25VsDevCmd.bat"
+signtool sign /a /t http://timestamp.verisign.com/scripts/timstamp.dll "!(TargetPath)"</PostBuildEvent>
   </PropertyGroup>
 </Project>
