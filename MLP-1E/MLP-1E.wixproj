@@ -49,6 +49,7 @@
     <Content Include="Icons\help.ico" />
     <Content Include="Icons\Product.ico" />
     <Content Include="Issuer.cer" />
+    <Content Include="sign.bat" />
     <Content Include="SourceDir\Drv\slabbus.cat" />
     <Content Include="SourceDir\Drv\slabbus.inf" />
     <Content Include="SourceDir\Drv\slabser.cat" />
@@ -88,7 +89,6 @@
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <PropertyGroup>
-    <PostBuildEvent>"%25VS110COMNTOOLS%25VsDevCmd.bat"
-signtool sign /a /t http://timestamp.verisign.com/scripts/timstamp.dll "!(TargetPath)"</PostBuildEvent>
+    <PostBuildEvent>$(ProjectDir)sign.bat "!(TargetPath)"</PostBuildEvent>
   </PropertyGroup>
 </Project>
