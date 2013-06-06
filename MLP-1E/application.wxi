@@ -4,7 +4,22 @@
 >
 	<Fragment>
 
-		<ComponentGroup Id="ProductComponents" Directory="APPLICATIONFOLDER">
+		<Feature
+			Id="Application"
+			Level="1"
+			Absent="disallow"
+			Display="2"
+			AllowAdvertise="yes"
+			InstallDefault="local"
+			TypicalDefault="install"
+			ConfigurableDirectory="APPLICATIONFOLDER"
+			Title="$(var.ProductShortName)"
+			Description="Исполняемые файлы приложения."
+		>
+			<ComponentGroupRef Id="ApplicationComponents" Primary="yes"/>
+		</Feature>
+
+		<ComponentGroup Id="ApplicationComponents">
 			<ComponentRef	Id="application.exe" Primary="yes"/>
 		</ComponentGroup>
 

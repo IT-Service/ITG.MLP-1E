@@ -92,8 +92,8 @@
 			Title="$(var.ProductShortName)"
 			Description="$(var.ProductName)"
 		>
-			<ComponentGroupRef Id="ProductComponents" />
-			<ComponentGroupRef Id="DriversComponents" />
+			<FeatureRef Id="Application" />
+			<FeatureRef Id="Drivers" />
 		</Feature>
 
 		<Property Id="ARPREADME" Value="https://github.com/IT-Service/ITG.$(var.ProductInternalName)/blob/master/readme.md"/>

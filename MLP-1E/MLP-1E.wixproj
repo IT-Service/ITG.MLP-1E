@@ -16,6 +16,7 @@
     <OutputPath>..\bin\$(Configuration)\$(Platform)\</OutputPath>
     <IntermediateOutputPath>obj\$(Configuration)\$(Platform)\</IntermediateOutputPath>
     <SuppressIces>ICE90</SuppressIces>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Admin image' ">
     <DefineConstants>AdminImage</DefineConstants>
@@ -47,6 +48,7 @@
     <Content Include="drivers.wxi" />
     <Content Include="Icons\help.ico" />
     <Content Include="Icons\Product.ico" />
+    <Content Include="Issuer.cer" />
     <Content Include="SourceDir\Drv\slabbus.cat" />
     <Content Include="SourceDir\Drv\slabbus.inf" />
     <Content Include="SourceDir\Drv\slabser.cat" />
@@ -59,9 +61,10 @@
     <Content Include="SourceDir\Drv\x86\slabcmnt.sys" />
     <Content Include="SourceDir\Drv\x86\slabser.sys" />
     <Content Include="SourceDir\Drv\x86\slabwhnt.sys" />
-    <Content Include="SourceDir\Drv\[itg] sign.cmd" />
+    <Content Include="SourceDir\Drv\[itg] update.cmd" />
     <Content Include="SourceDir\Prg\mlp_1e.exe" />
     <Content Include="SourceDir\Prg\mlp_1e.ini" />
+    <Content Include="SourceDir\Prg\[itg] sign.cmd" />
     <Content Include="WixUI_MondoWithoutLicenseDlg.wxi" />
   </ItemGroup>
   <ItemGroup>
@@ -84,4 +87,7 @@
     </WixLibrary>
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
+  <PropertyGroup>
+    <PostBuildEvent />
+  </PropertyGroup>
 </Project>

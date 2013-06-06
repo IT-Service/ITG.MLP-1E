@@ -5,6 +5,20 @@
 >
 	<Fragment>
 
+		<Feature
+			Id="Drivers"
+			Level="1"
+			Absent="disallow"
+			Display="4"
+			AllowAdvertise="no"
+			InstallDefault="source"
+			TypicalDefault="install"
+			Title="Драйверы"
+			Description="Драйверы для подключения оборудования через USB интерфейс."
+		>
+			<ComponentGroupRef Id="DriversComponents" Primary="yes"/>
+		</Feature>
+
 		<ComponentGroup Id="DriversComponents">
 			<ComponentRef Id="slabbus.inf"/>
 			<ComponentRef Id="slabbus.cat"/>

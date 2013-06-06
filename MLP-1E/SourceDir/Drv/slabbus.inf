@@ -18,7 +18,8 @@ signature="$WINDOWS NT$"
 Class=USB
 ClassGuid={36FC9E60-c465-11cf-8056-444553540000}
 Provider=%Provider%
-DriverVer=02/22/2007,4.40.1.0
+;DriverVer=02/22/2007,4.40.1.0
+DriverVer=06/06/2013,4.40.1.0
 CatalogFile=slabbus.cat
 
 [ControlFlags]
