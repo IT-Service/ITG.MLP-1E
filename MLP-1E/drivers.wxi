@@ -11,7 +11,7 @@
 			Absent="disallow"
 			Display="4"
 			AllowAdvertise="no"
-			InstallDefault="source"
+			InstallDefault="local"
 			TypicalDefault="install"
 			Title="Драйверы"
 			Description="Драйверы для подключения оборудования через USB интерфейс."
