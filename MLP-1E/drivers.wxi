@@ -7,11 +7,11 @@
 
 		<Feature
 			Id="Drivers"
-			Level="1"
-			Absent="disallow"
+			Level="200"
+			Absent="allow"
 			Display="4"
 			AllowAdvertise="no"
-			InstallDefault="source"
+			InstallDefault="local"
 			TypicalDefault="install"
 			Title="Драйверы"
 			Description="Драйверы для подключения оборудования через USB интерфейс."
