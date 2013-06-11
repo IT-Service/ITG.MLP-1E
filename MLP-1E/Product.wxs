@@ -4,7 +4,7 @@
 	xmlns:difx='http://schemas.microsoft.com/wix/DifxAppExtension'
 >
 
-	<?define ProductVersion="04.40.0001.0100"?>
+	<?define ProductVersion="04.40.0001.0104"?>
 	<?define ProductMajorVersion="4"?>
 	<?define ProductMinorVersion="40"?>
 	<?define ProductShortName="МЛП-1Э"?>
